@@ -1,0 +1,138 @@
+div.pv-top-card-section__body
+	div.pv-top-card-section__information
+		div.pv-top-card-section__experience
+			h3.pv-top-card-section__company  *********************
+			h3.pv-top-card-section__school
+			h3.pv-top-card-section__location
+			h3.pv-top-card-section__connections
+
+
+section.experience-section //experience
+	ul.section-info
+		li(:first).pv-profile-section__section-info.section-info
+			div.pv-profile-section__sortable-card-item.pv-position-entity
+				a //href公司主页
+					div.pv-entity__logo.company-logo
+					div.pv-entity__summary-info
+						h3(position)
+						h4
+							span('Company Name')
+							span(company)    **********************
+						h4(Dates Employed)
+						h4(Employment Duration)
+						h4(Location)
+		li
+		li
+
+section.education-section  //education
+
+div#permalink-overlay.PermalinkOverlay PermalinkOverlay-with-background **********
+	div#permalink-overlay-dialog.PermalinkOverlay-modal
+		div.PermalinkOverlay-content
+			div.PermalinkOverlay-body
+				div.permalink-container.ermalink-container--withArrows **********
+					div.permalink .light-inline-actions  .stream-uncapped .has-replies .original-permalink-page
+						div.permalink-inner permalink-tweet-container //post内容主题,包括内容, 时间, 转发, 点赞 ********
+							div.tweet permalink-tweet js-actionable-user js-actionable-tweet js-original-tweet has-cards with-social-proof logged-in js-initial-focus focus //包含post用户的个人信息, name, screen-name, id等
+								div.content clearfix
+									div.permalink-header // *******
+										a.account-group js-account-group js-action-profile js-user-profile-link js-nav
+											img
+											span.FullNameGroup
+												strong.fullname show-popup-with-id  //name
+											span.username u-dir
+												b //username
+										small.time
+											a.tweet-timestamp js-permalink js-nav js-tooltip //发布时间
+										div
+										div
+								div.js-tweet-text-container
+									p.TweetTextSize TweetTextSize--jumbo js-tweet-text tweet-text //post文本内容
+								div.js-tweet-details-fixer tweet-details-fixer //具体内容
+									div.card2 js-media-container
+									div.client-and-actions//发布时间
+									div.js-tweet-stats-container tweet-stats-container/点赞和转发按钮和数目
+										li.js-stat-count js-stat-retweets stat-count //转发数
+										li.js-stat-count js-stat-favorites stat-count //点赞数
+										li.avatar-row js-face-pile-container //部分点赞人
+									div.stream-item-footer//点赞,评论,转发等按钮, 包含数目
+										div.ProfileTweet-actionList js-actions
+											div.ProfileTweet-action ProfileTweet-action--reply //回复
+												button.ProfileTweet-actionButton js-actionButton js-actionReply
+													span.ProfileTweet-actionCount
+														span.ProfileTweet-actionCountForPresentation//回复的数字
+											div.ProfileTweet-action ProfileTweet-action--retweet js-toggleState js-toggleRt //转发
+											div.ProfileTweet-action ProfileTweet-action--favorite js-toggleState //点赞
+						div.inline-reply-tweetbox swift //post回复框
+						div.replies-to  .permalink-inner .permalink-replies //post回复内容 ********
+							div.tweets-wrapper
+								div#descendants.ThreadedDescendants ************
+									div.stream-container<data-max-position, data-min-position>
+										div.stream
+											ol#stream-items-id.stream-items js-navigable-stream ***********
+												div.ThreadedConversation--loneTweet     //一条评论
+													li.js-stream-item stream-item stream-item
+														div.tweet js-stream-tweet js-actionable-tweet js-profile-popup-actionable dismissible-content descendant permalink-descendant-tweet //评论者信息
+															div.content
+																div.stream-item-header
+																	a.account-group js-account-group js-action-profile js-user-profile-link js-nav
+																		img
+																		span.FullNameGroup
+																			strong.fullname show-popup-with-id  //name
+																		span.username u-dir
+																			b //username
+																	small.time
+																		a.tweet-timestamp js-permalink js-nav js-tooltip //发布时间
+																	div
+																div.ReplyingToContextBelowAuthor //回复对象,含转发的
+																div.js-tweet-text-container //评论内容
+																	p.TweetTextSize  js-tweet-text tweet-text
+																div.stream-item-footer //对该评论进行转发,点赞,回复等操作按钮
+												...
+												li.ThreadedConversation       //多条评论
+													ol.stream-items
+														div.ThreadedConversation-tweet
+															li.js-stream-item stream-item stream-item
+																...
+														...
+														div.ThreadedConversation-tweet last//最后一条回复内容
+														li.ThreadedConversation-moreReplies //more reply 点击展开更多
+												...
+												div.ThreadedConversation--header //显示"More replies"
+												...
+												li.ThreadedConversation-showMoreThreads //show more, 点击展示更多
+													button<data-cursor>/button.Tombstone-action btn-link ThreadedConversation-showMoreThreadsPrompt
+
+											div.stream-footer //页脚
+												div.timeline-end has-items
+													div.stream-end //没有数据, 最终会显示推特图标
+													div.stream-loading //如有数据,旋转图标, 等待数据自动加载
+
+											div.stream-fail-container //网络原因导致数据加载失败, 点击"try again"加载更多
+												a.try-again-after-whale
+
+
+
+div#activity-popup-dialog.modal-container favorited-popup/retweeted-popup has-content //点赞/转发弹窗
+	div#activity-popup-dialog-dialog.modal draggable
+		div.modal-content clearfix
+			div.modal-header
+				h3.modal-title
+			button.modal-btn modal-close js-close
+			div#activity-popup-dialog-body.modal-body
+				div.tweet-loading
+				div.activity-popup-dialog-content modal-tweet clearfix .tweet-showing //被评论推文
+					div.tweet js-stream-tweet js-actionable-tweet js-profile-popup-actionable dismissible-content original-tweet js-original-tweet has-cards  has-content
+				div.loading
+				div.activity-popup-dialog-users clearfix
+					ol.activity-popup-users dropdown-threshold
+						li.js-stream-item stream-item stream-item
+							div.account  js-actionable-user js-profile-popup-actionable
+								div.activity-user-profile-content
+									div.content
+										div.stream-item-header //转发者信息
+										p.bio u-dir //转发评论内容
+
+
+
+

@@ -1,0 +1,50 @@
+.permalink-tweet-container > .permalink-tweet > .content {
+}
+
+#crawlBtn {
+	position: fixed;
+    left: 50%;
+    top: 20%;
+    margin-left: 400px;
+	z-index: 100000;
+
+	padding: 6px 12px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    cursor: pointer;
+
+	color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+	/* background-color: red; */
+}
+
+#crawlNoticeDiv {
+	/* display: none; */
+	position: fixed;
+    left: 50%;
+    top: 20%;
+    margin-left: 400px;
+    margin-top: 50px;
+	z-index: 100000;
+
+	height: 100px;
+	width: 150px;
+	padding: 6px 12px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    cursor: pointer;
+
+    color: #333;
+    background-color: #fff;
+
+    border: 1px solid #333;
+    border-radius: 4px;
+}

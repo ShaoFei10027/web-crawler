@@ -1,0 +1,69 @@
+{
+    "manifest_version": 2,
+    "name": "Web Crawler",
+    "version": "1.1",
+    "description": "针对Linkedin和Twitter信息抓取",
+    "permissions": [ "webRequest", "webRequestBlocking", "notifications", "cookies", "http://*/*", "https://*/*", "contextMenus"],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "background": {
+        "scripts": [
+            "asset/jquery-2.0.3.js",
+            "background_page/background_script.js"
+        ]
+    },
+    // "browser_action": {
+    //     "default_icon": {
+    //         "19": "images/icon19.png",
+    //         "38": "images/icon38.png"
+    //     },
+    //     "default_title": "scraper",
+    //     "default_popup": "popup.html"
+    // },
+    "content_scripts": [
+        {
+            "matches": ["*://www.linkedin.com/*"],
+            "exclude_matches": ["*://www.linkedin.com/*search*"],
+            "css": ["content_script/content.css"],
+            "js": ["asset/jquery-2.0.3.js", "content_script/content.js"]
+        },
+        {
+            "matches": ["*://twitter.com/*"],
+            "css": ["content_script/twitter_content.css"],
+            "js": ["asset/jquery-2.0.3.js", "content_script/twitter_content.js"]
+        },
+        {
+            "matches": ["*://www.linkedin.com/jobs/search/*"],
+            "css": ["content_script/linkedin_search_jobs.css"],
+            "js": ["asset/jquery-2.0.3.js", "content_script/linkedin_search_jobs.js"]
+        },
+        {
+            "matches": ["*://www.linkedin.com/search/results/companies/*"],
+            "css": ["content_script/linkedin_search_companies.css"],
+            "js": ["asset/jquery-2.0.3.js", "content_script/linkedin_search_companies.js"]
+        }
+    ]
+}
+
+//  comments
+//  https://www.linkedin.com/pulse-fe/api/v1/comments?urn=urn:li:activity:6292680550796795904&start=0&count=10&sort=REV_CHRON
+//  可获取post和article的comments,个人信息和评论在一个对象里
+//
+//  https://www.linkedin.com/voyager/api/feed/comments?count=10&q=findComments&start=50&updateId=activity%3A6287249309633216512
+//  可获取post和article的comments,个人信息和评论在在不同对象里
+//
+//
+//  likes
+//  https://www.linkedin.com/voyager/api/feed/likes?count=20&objectId=activity:6292680550796795904&q=likes&start=0
+//
+//  https://www.linkedin.com/pulse-fe/api/v1/likes?urn=urn:li:activity:6292680550796795904&start=0&count=10&sort=REV_CHRON
+
+
+
+//转发/retweet
+//https://twitter.com/i/activity/retweeted_popup?id=893354836443492353
+//点赞/favorite
+//https://twitter.com/i/activity/favorited_popup?id=894445445849559040

@@ -1,0 +1,21 @@
+.modal-content-wrapper h2.feed-s-likers-modal__likes-count
+{
+	/* background-color: red !important; */
+}
+
+.modal-content-wrapper h2.feed-s-likers-modal__likes-count:after
+{
+	content: '(CRAWL)' !important;
+	padding-left: 5px;
+	font-size: 16px;
+	color: red;
+	cursor: pointer;
+}
+
+ .option-button__share-via h5.headline:after {
+ 	content: ', and CRAWL this post' !important;
+	/* padding-left: 5px;
+	font-size: 16px; */
+	color: red;
+	cursor: pointer;
+ }
