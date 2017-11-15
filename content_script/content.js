@@ -350,7 +350,7 @@ var getCommentsProfile = function(objId){
 };
 
 //待删除
-$(document).on('click', '.feed-s-likers-modal__likes-countttt', function(event) {
+/*$(document).on('click', '.feed-s-likers-modal__likes-countttt', function(event) {
 	event.preventDefault();
 	console.log($(this));
 	console.log(event.target);
@@ -492,4 +492,4 @@ $(document).on('click', "button[data-control-name='control_menu_copy_link']", fu
 
 	getLikesProfile(activityId);
 	getCommentsProfile(activityId);
-});
+});*/

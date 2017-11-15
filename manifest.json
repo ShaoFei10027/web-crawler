@@ -3,7 +3,7 @@
     "name": "Web Crawler",
     "version": "1.1",
     "description": "针对Linkedin和Twitter信息抓取",
-    "permissions": [ "webRequest", "webRequestBlocking", "notifications", "cookies", "http://*/*", "https://*/*", "contextMenus"],
+    "permissions": [ "webRequest", "webRequestBlocking", "notifications", "cookies", "<all_urls>", "contextMenus", "storage"],
     "icons": {
         "16": "images/icon16.png",
         "48": "images/icon48.png",
@@ -24,7 +24,7 @@
     //     "default_popup": "popup.html"
     // },
     "content_scripts": [
-        {
+        /*{
             "matches": ["*://www.linkedin.com/*"],
             "exclude_matches": ["*://www.linkedin.com/*search*"],
             "css": ["content_script/content.css"],
@@ -44,6 +44,11 @@
             "matches": ["*://www.linkedin.com/search/results/companies/*"],
             "css": ["content_script/linkedin_search_companies.css"],
             "js": ["asset/jquery-2.0.3.js", "content_script/linkedin_search_companies.js"]
+        },*/
+        {
+            "matches": ["*://www.linkedin.com/search/results/people/*"],
+            "css": ["content_script/linkedin_search_people.css"],
+            "js": ["asset/jquery-2.0.3.js", "content_script/linkedin_search_people.js"]
         }
     ]
 }

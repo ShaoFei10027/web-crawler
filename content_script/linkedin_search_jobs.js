@@ -2,7 +2,7 @@
 (function(){
 	console.log('初始化button');
     var btn = "<button id='crawlBtn'>↓<button>";
-    $('.location-search-box').append(btn);
+    $('.jobs-search-box').append(btn);
 
 })();
 
